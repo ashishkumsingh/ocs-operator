@@ -333,18 +333,18 @@ func (r *ReconcileStorageCluster) newCephObjectStoreInstances(initData *ocsv1.St
 				DataPool: cephv1.PoolSpec{
 					FailureDomain: initData.Status.FailureDomain,
 					Replicated: cephv1.ReplicatedSpec{
-						Size: 3,
+						Size: 1,
 					},
 				},
 				MetadataPool: cephv1.PoolSpec{
 					FailureDomain: initData.Status.FailureDomain,
 					Replicated: cephv1.ReplicatedSpec{
-						Size: 3,
+						Size: 1,
 					},
 				},
 				Gateway: cephv1.GatewaySpec{
 					Port:      80,
-					Instances: 2,
+					Instances: 1,
 					Placement: defaults.DaemonPlacements["rgw"],
 					Resources: defaults.GetDaemonResources("rgw", initData.Spec.Resources),
 				},
@@ -416,7 +416,7 @@ func (r *ReconcileStorageCluster) newCephBlockPoolInstances(initData *ocsv1.Stor
 			Spec: cephv1.PoolSpec{
 				FailureDomain: initData.Status.FailureDomain,
 				Replicated: cephv1.ReplicatedSpec{
-					Size:            3,
+					Size:            1,
 					TargetSizeRatio: .49,
 				},
 			},
@@ -560,14 +560,14 @@ func (r *ReconcileStorageCluster) newCephFilesystemInstances(initData *ocsv1.Sto
 			Spec: cephv1.FilesystemSpec{
 				MetadataPool: cephv1.PoolSpec{
 					Replicated: cephv1.ReplicatedSpec{
-						Size: 3,
+						Size: 1,
 					},
 					FailureDomain: initData.Status.FailureDomain,
 				},
 				DataPools: []cephv1.PoolSpec{
 					cephv1.PoolSpec{
 						Replicated: cephv1.ReplicatedSpec{
-							Size:            3,
+							Size:            1,
 							TargetSizeRatio: .49,
 						},
 						FailureDomain: initData.Status.FailureDomain,

@@ -83,3 +83,8 @@ if [ -n "$OPENSHIFT_BUILD_NAMESPACE" ]; then
 	echo "Openshift CI detected, deploying using image $CATALOG_FULL_IMAGE_NAME"
 	MUST_GATHER_FULL_IMAGE_NAME="registry.svc.ci.openshift.org/${OPENSHIFT_BUILD_NAMESPACE}/stable:ocs-must-gather-quay"
 fi
+
+
+export OCS_IMAGE=quay.io/assingh/ocs-operator
+export REGISTRY_NAMESPACE=assingh
+export IMAGE_TAG=master
