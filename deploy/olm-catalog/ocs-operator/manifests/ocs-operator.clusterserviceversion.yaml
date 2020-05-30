@@ -56,8 +56,8 @@ metadata:
       ]
     capabilities: Full Lifecycle
     categories: Storage
-    containerImage: quay.io/ocs-dev/ocs-operator:4.5.0
-    createdAt: "2020-05-27 15:12:24"
+    containerImage: quay.io/assingh/ocs-operator:master
+    createdAt: "2020-05-29 21:22:59"
     description: Red Hat OpenShift Container Storage provides hyperconverged storage
       for applications within an OpenShift cluster.
     external.features.ocs.openshift.io/export-script: |-
@@ -1810,7 +1810,7 @@ spec:
                   value: noobaa/noobaa-core:5.5.0-20200422
                 - name: NOOBAA_DB_IMAGE
                   value: centos/mongodb-36-centos7
-                image: quay.io/ocs-dev/ocs-operator:latest
+                image: quay.io/assingh/ocs-operator:master
                 imagePullPolicy: Always
                 name: ocs-operator
                 ports:
