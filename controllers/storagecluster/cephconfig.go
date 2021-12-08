@@ -28,7 +28,7 @@ var (
 	defaultRookConfigData = `
 [global]
 bdev_flock_retry = 20
-mon_osd_full_ratio = .85
+mon_osd_full_ratio = .81
 mon_osd_backfillfull_ratio = .8
 mon_osd_nearfull_ratio = .75
 mon_max_pg_per_osd = 600
